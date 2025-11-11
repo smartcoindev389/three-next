@@ -1,0 +1,14 @@
+.canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  pointer-events: none;
+
+  border: 1px solid transparent;
+  border-radius: inherit;
+  border-width: inherit;
+
+  opacity: 0;
+}

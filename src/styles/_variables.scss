@@ -1,0 +1,82 @@
+// fonts
+$f-open-sans: var(--var-open-sans), sans-serif;
+$f-poppins: var(--var-poppins), sans-serif;
+$f-helvetica: var(--font-helvetica-neue), sans-serif;
+
+$c-primary: #ffffff;
+$c-bg: #001322;
+$c-blue: #0080d0;
+
+$desktop: 1600px;
+$laptop: 1440px;
+$laptop-s: 1366px;
+$tablet: 1024px;
+$mobile: 565px;
+
+$s-desktop: 1600px;
+$s-laptop: 1440px;
+$s-tablet: 1024px;
+$s-mobile: 565px;
+
+@function get-d($target) {
+  $vw-context: calc((1920 * 0.01) * 1px);
+  @return calc(($target / $vw-context) * 1vw);
+}
+@function get-xl($target) {
+  $vw-context: calc((1280 * 0.01) * 1px);
+  @return calc(($target / $vw-context) * 1vw);
+}
+@function get-lg($target) {
+  $vw-context: calc((1024 * 0.01) * 1px);
+  @return calc(($target / $vw-context) * 1vw);
+}
+@function get-md($target) {
+  $vw-context: calc((768 * 0.01) * 1px);
+  @return calc(($target / $vw-context) * 1vw);
+}
+@function get-sm($target) {
+  $vw-context: calc((540 * 0.01) * 1px);
+  @return calc(($target / $vw-context) * 1vw);
+}
+@function get-xs($target) {
+  $vw-context: calc((480 * 0.01) * 1px);
+  @return calc(($target / $vw-context) * 1vw);
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: 480px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == sm {
+    @media (max-width: 640px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == md {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == lg {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == xl {
+    @media (max-width: 1280px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == d {
+    @media (min-width: 1920px) {
+      @content;
+    }
+  }
+}

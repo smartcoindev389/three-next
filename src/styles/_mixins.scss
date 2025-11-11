@@ -1,0 +1,56 @@
+@mixin textOverflowVertical($linesCount: 1) {
+  display: -webkit-box;
+  -webkit-line-clamp: $linesCount;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@mixin textGradient($gradientColor) {
+  background: $gradientColor;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text !important;
+  text-fill-color: transparent;
+}
+
+@mixin gridGen($desk, $tab, $mob) {
+  display: grid;
+
+  grid-template-columns: repeat(#{$desk}, 1fr);
+
+  @media screen and (max-width: $tablet) {
+    grid-template-columns: repeat(#{$tab}, 1fr);
+  }
+
+  @media screen and (max-width: $mobile) {
+    grid-template-columns: repeat(#{$mob}, 1fr);
+  }
+}
+
+@mixin gridCols($cols, $gap) {
+  flex: 0 0 calc(#{100% / $cols} - #{$gap * ($cols - 1) / $cols}px);
+  max-width: calc(#{100% / $cols} - #{$gap * ($cols - 1) / $cols}px);
+}
+
+@mixin grid($cols, $gapRow, $gapCol: $gapRow, $selector: li) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: #{$gapCol}px #{$gapRow}px;
+
+  > #{$selector} {
+    @include gridCols($cols, $gapRow);
+  }
+}
+
+@mixin adaptiveTheSameValue($valueName, $value) {
+  #{$valueName}: get-d($value);
+
+  @media screen and (max-width: $tablet) {
+    #{$valueName}: get-t($value);
+  }
+
+  @media screen and (max-width: $mobile) {
+    #{$valueName}: get-m($value);
+  }
+}

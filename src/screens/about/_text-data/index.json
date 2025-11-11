@@ -1,0 +1,110 @@
+{
+    "personsBox1": {
+        "person1": {
+            "name": "Macron",
+            "role": "full-stack",
+            "description": "Cold-blooded developer, passionate about low-level engineering",
+            "assetPath": "assets/about/Nikamal.png"
+        },
+        "person2": {
+            "name": "Arabica",
+            "role": "Designer",
+            "description": "Talented designer, loves coffee and mushrooms",
+            "assetPath": "assets/about/Viktor.png"
+        }
+    },
+    "personsBox2": {
+        "person1": {
+            "name": "Nikamal",
+            "role": "UI/UX Designer",
+            "description": "Victor designs with empathy and innovation at his core, focusing on accessibility and user satisfaction. His meticulous craftsmanship ensures the interfaces he designs are not only beautiful but also highly functional.",
+            "assetPath": "assets/about/Nikamal.png"
+        },
+        "person2": {
+            "name": "Viktor",
+            "role": "Designer",
+            "description": "Creative designer, enjoys crafting user-friendly interfaces",
+            "assetPath": "assets/about/Viktor.png"
+        }
+    },
+    "hello_text": {
+        "h1": "about",
+        "h1_p": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+        "h1_p_br": "industry. Lorem Ipsum has been the industrys standard dummy",
+        "h2": "The desire to #makeitbetter",
+        "h2_br": "guides everything we do.",
+        "p": "Creative where it counts. Strategic when it matters. We bring",
+        "p_br": "adaptability and ambition to align with your goals and keep",
+        "p_br_br": "momentum strong. Driven by curiosity and a commitment to",
+        "p_br_br_br": "quality, our team thrives in collaborative environments,",
+        "p_br_br_br_br": "crafting impactful solutions and delivering meaningful user",
+        "p_br_br_br_br_br": "experiences."
+    },
+    "hello_bords": {
+        "bord1": {
+            "mainText": "#ai",
+            "subText": "artificial intelligence"
+        },
+        "bord2": {
+            "mainText": "#innovation",
+            "subText": "more than the latest tech"
+        },
+        "bord3": {
+            "mainText": "#cloud",
+            "subText": "cloud solutions"
+        },
+        "bord4": {
+            "mainText": "#team",
+            "subText": "collaboration"
+        }
+    },
+    "tunnel": {
+        "bord1": {
+            "mainText": "#innovation",
+            "subText": "more than the latest tech"
+        },
+        "bord2": {
+            "mainText": "#ai",
+            "subText": "artificial intelligence"
+        },
+        "bord3": {
+            "mainText": "#cloud",
+            "subText": "cloud solutions"
+        },
+        "bord4": {
+            "mainText": "#team",
+            "subText": "collaboration"
+        },
+        "bord5": {
+            "mainText": "#design",
+            "subText": "user experience"
+        },
+        "bord6": {
+            "mainText": "#dev",
+            "subText": "development"
+        },
+        "bord7": {
+            "mainText": "#future",
+            "subText": "next big thing"
+        }
+    },
+    "finished": {
+        "title": "awards&recognitions",
+        "bord1": {
+            "mainText": "name4",
+            "subText": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        "bord2": {
+            "mainText": "name3",
+            "subText": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        "bord3": {
+            "mainText": "name1",
+            "subText": "dummy text ever since the 1500s,"
+        },
+        "bord4": {
+            "mainText": "name2",
+            "subText": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        }
+    }
+}

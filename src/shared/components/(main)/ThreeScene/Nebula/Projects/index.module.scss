@@ -1,0 +1,7 @@
+.projectHtml {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.projectHtml.visible {
+  opacity: 1;
+}

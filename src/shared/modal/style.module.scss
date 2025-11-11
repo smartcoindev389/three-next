@@ -1,0 +1,312 @@
+.modal {
+  position: fixed;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  padding: 0 get-d(200px);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  font-family: $f-poppins;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.7s;
+  background-color: #08192750;
+  @include respond(lg) {
+    padding: 0 get-lg(64px);
+  }
+  @include respond(md) {
+    padding: 64px 16px 32px 16px;
+    grid-template-columns: 100%;
+    grid-template-rows: max-content 1fr;
+    overflow: auto;
+  }
+  &.activeModal {
+    opacity: 1;
+    pointer-events: all;
+  }
+  & .blur {
+    padding: get-d(65px) get-d(60px) get-d(60px) get-d(60px);
+    height: get-d(750px);
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: max-content max-content 1fr;
+    position: relative;
+    @include respond(lg) {
+      padding: get-lg(32px);
+      height: get-lg(550px);
+    }
+    @include respond(md) {
+      padding: 32px;
+      height: max-content;
+      min-height: 100%;
+    }
+    @include respond(sm) {
+      padding: 32px 16px;
+    }
+    & form {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 1fr max-content;
+      grid-gap: get-d(24px);
+      @include respond(lg) {
+        grid-gap: get-lg(20px);
+      }
+      @include respond(md) {
+        grid-gap: 4px;
+      }
+    }
+    & h3 {
+      font-weight: 600;
+      font-size: get-d(40px);
+      line-height: 100%;
+      text-align: center;
+      @include respond(lg) {
+        font-size: get-lg(26px);
+      }
+      @include respond(md) {
+        font-size: 24px;
+      }
+    }
+    & p {
+      font-weight: 400;
+      font-size: get-d(18px);
+      line-height: 100%;
+      text-align: center;
+      margin: get-d(16px) 0 get-d(26px) 0;
+      @include respond(lg) {
+        font-size: get-lg(16px);
+        margin: get-lg(16px) 0 get-lg(26px) 0;
+      }
+      @include respond(md) {
+        font-size: 14px;
+        margin: 16px 0 20px 0;
+      }
+    }
+  }
+}
+
+.close {
+  position: fixed;
+  width: get-d(32px);
+  height: get-d(32px);
+  top: get-d(32px);
+  right: get-d(32px);
+  @include respond(lg) {
+    width: get-lg(28px);
+    height: get-lg(28px);
+    top: get-lg(16px);
+    right: get-lg(26px);
+  }
+  @include respond(md) {
+    width: 24px;
+    height: 24px;
+    top: 58px;
+    right: 32px;
+  }
+  & svg {
+    fill: $c-primary;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  @include respond(md) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 32px;
+  }
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+  font-size: get-d(18px);
+  line-height: 150%;
+  margin-bottom: get-d(26px);
+  @include respond(lg) {
+    font-size: get-lg(18px);
+    margin-bottom: get-lg(26px);
+  }
+  @include respond(md) {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  & .title {
+    color: rgba($c-primary, 50%);
+  }
+  & .text {
+    color: $c-primary;
+    max-width: 220px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  & h2 {
+    font-weight: 700;
+    font-size: get-d(48px);
+    line-height: 100%;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    @include respond(lg) {
+      font-size: get-lg(36px);
+    }
+    @include respond(md) {
+      font-size: 24px;
+      text-align: center;
+    }
+  }
+  & p {
+    margin: get-d(40px) 0;
+    width: get-d(470px);
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+    @include respond(lg) {
+      margin: get-lg(40px) 0;
+      width: get-lg(350px);
+    }
+    @include respond(md) {
+      margin: 16px 0;
+      width: 100%;
+      font-size: 16px !important;
+      text-align: center;
+    }
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, calc(50% - get-d(9px)));
+  grid-gap: get-d(18px);
+  grid-template-rows: repeat(2, max-content) 1fr;
+  @include respond(lg) {
+    grid-gap: get-lg(16px);
+    grid-template-columns: repeat(2, calc(50% - get-lg(8px)));
+  }
+  @include respond(md) {
+    grid-template-columns: repeat(2, calc(50% - 6px));
+    grid-gap: 12px;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: get-d(8px);
+  @include respond(lg) {
+    gap: get-lg(4px);
+  }
+  @include respond(md) {
+    gap: 4px;
+  }
+  @include respond(sm) {
+    grid-column: 1 / -1;
+  }
+  & label {
+    font-weight: 400;
+    font-size: get-d(14px);
+    line-height: 100%;
+    color: $c-primary;
+    padding: 0 0 0 get-d(8px);
+    @include respond(lg) {
+      font-size: get-lg(14px);
+      padding: 0 0 0 get-lg(4px);
+    }
+    @include respond(md) {
+      font-size: 12px;
+      padding: 0 0 0 4px;
+    }
+  }
+  & input,
+  & textarea {
+    background: $c-primary;
+    border: get-d(1px) solid #ababab;
+    padding: get-d(17.5px) get-d(15px);
+    color: #000;
+    border-radius: get-d(5px);
+    height: 100%;
+    @include respond(lg) {
+      padding: get-lg(14px) get-lg(12px);
+      border-radius: get-lg(5px);
+    }
+    @include respond(md) {
+      padding: 12px 10px;
+      border-radius: 5px;
+    }
+    &,
+    &::placeholder {
+      font-weight: 400;
+      font-size: get-d(16px);
+      line-height: 100%;
+      @include respond(lg) {
+        font-size: get-lg(14px);
+      }
+      @include respond(md) {
+        font-size: 12px;
+      }
+    }
+    &::placeholder {
+      color: #74788d;
+    }
+  }
+  & textarea {
+    @include respond(md) {
+      height: 100px;
+    }
+  }
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+.errors {
+  font-size: get-d(16px);
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+  color: #ff0000;
+  &.visible {
+    opacity: 1;
+  }
+  @include respond(lg) {
+    font-size: get-lg(12px);
+  }
+  @include respond(md) {
+    font-size: 12px;
+  }
+}
+
+.successMessage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: get-d(24px);
+  position: absolute !important;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  @include respond(lg) {
+    gap: get-lg(24px);
+  }
+  @include respond(md) {
+    gap: 24px;
+  }
+}
+
+body:has(.activeModal) main,
+body:has(.activeModal) footer {
+  filter: blur(10px);
+}
+
+body:has(.activeModal) {
+  overflow: hidden;
+}

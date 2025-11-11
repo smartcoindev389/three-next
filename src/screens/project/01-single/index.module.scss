@@ -1,0 +1,145 @@
+.Single {
+  & h2 {
+    font-family: $f-poppins;
+    font-weight: 800;
+    font-size: get-d(40px);
+    line-height: 180%;
+    margin-bottom: get-d(20px);
+    @include respond(lg) {
+      font-size: get-lg(40px);
+      margin-bottom: get-lg(20px);
+    }
+    @include respond(md) {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+  }
+  & .image {
+    @include respond(md) {
+      grid-column: 1 / 3;
+      grid-row: 1 / 2;
+    }
+  }
+  & .blur2 {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    @include respond(lg) {
+      display: none;
+    }
+  }
+  & .blur3 {
+    grid-column: 1 / -1;
+    height: get-d(410px);
+    @include respond(lg) {
+      height: get-lg(410px);
+    }
+    @include respond(md) {
+      height: 270px;
+    }
+  }
+}
+
+.Wrapper {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: get-d(67px) get-d(20px);
+  padding-top: get-d(70px);
+  @include respond(lg) {
+    grid-template-columns: 1fr;
+    grid-gap: get-lg(67px) get-lg(20px);
+    padding-top: get-lg(70px);
+  }
+  @include respond(md) {
+    grid-template-columns: 1fr;
+    grid-gap: 32px;
+    padding-top: 32px;
+  }
+}
+
+.Content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: max-content;
+  padding: get-d(200px) get-d(100px);
+  grid-gap: get-d(67px) get-d(20px);
+  position: relative;
+  z-index: 1;
+  @include respond(lg) {
+    padding: get-lg(200px) get-lg(64px);
+    grid-gap: get-lg(67px) get-lg(20px);
+  }
+  @include respond(md) {
+    padding: 100px 16px;
+    grid-gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.Info {
+  height: get-d(450px);
+  @include respond(lg) {
+    height: get-lg(230px);
+  }
+  @include respond(md) {
+    height: 50%;
+    grid-row: 1 / 2;
+    grid-column: -2 / -1;
+    align-self: flex-end;
+  }
+  @include respond(sm) {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    height: 150px;
+  }
+}
+
+.GridText {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: get-d(80px);
+  @include respond(lg) {
+    grid-gap: get-lg(80px);
+  }
+  @include respond(md) {
+    grid-template-columns: 1fr;
+    grid-gap: 32px;
+  }
+}
+
+.bigLink {
+  grid-column: 1 / -1;
+  height: get-d(410px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $f-poppins;
+  font-weight: 800;
+  font-size: get-d(96px);
+  text-align: center;
+  line-height: 100%;
+  border: none;
+  padding: 0;
+  overflow: hidden;
+  @include respond(lg) {
+    height: get-lg(410px);
+    font-size: get-lg(96px);
+  }
+  @include respond(md) {
+    height: 270px;
+    font-size: 64px;
+  }
+  & a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  &::before {
+    width: 70%;
+    right: -20%;
+  }
+}

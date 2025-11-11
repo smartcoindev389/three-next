@@ -1,0 +1,167 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.brackets {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: get-d(20px);
+  gap: get-d(4px);
+
+  @include respond(lg) {
+    font-size: get-lg(20px);
+    gap: get-lg(4px);
+  }
+
+  @include respond(md) {
+    font-size: 20px;
+    gap: 4px;
+  }
+
+  &::before {
+    content: "[";
+  }
+
+  &::after {
+    content: "]";
+  }
+}
+
+.title-2 {
+  font-weight: 700;
+  font-size: get-d(64px);
+  line-height: 150%;
+  text-align: left;
+
+  @include respond(lg) {
+    font-size: get-lg(48px);
+  }
+
+  @include respond(md) {
+    font-size: 28px;
+  }
+
+  & .color {
+    font-weight: inherit;
+    color: #31b7f6;
+  }
+}
+
+.char,
+.charBig {
+  display: inline-block;
+  font-style: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.charBig {
+  white-space: nowrap;
+}
+
+.description {
+  font-weight: 500;
+  font-size: get-d(24px);
+  line-height: 125%;
+  letter-spacing: 0.17em;
+  letter-spacing: 0.17em;
+
+  @include respond(lg) {
+    font-size: get-lg(24px);
+  }
+
+  @include respond(md) {
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+.hover-text-wrapper {
+  overflow: hidden;
+
+  &:hover .hover-text {
+    transform: translateY(-100%);
+  }
+}
+
+.hover-text {
+  position: relative;
+  transition: transform 0.25s ease-in-out;
+
+  &::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+}
+
+.arrow-popup {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #09283acc;
+  border: 1px solid rgba(195, 248, 254, 0.89);
+  border-radius: 8px;
+  box-shadow:
+    0 0 10px 1px #c3f8fe80,
+    inset 0 0 10px 1px #c3f8fe80;
+  transform-origin: top left;
+  padding: 25px;
+
+  .upper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .upper svg {
+    max-width: 150px;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.disabled-arrow {
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s ease;
+}
+
+.time {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: get-d(48px);
+  margin-bottom: get-d(84px);
+  @include respond(lg) {
+    gap: get-lg(24px);
+  }
+  @include respond(md) {
+    gap: 24px;
+  }
+  & b {
+    display: inline-block;
+    width: 2ch;
+    font-weight: 400;
+    font-size: get-d(72px);
+    font-family: $f-poppins;
+    text-align: center;
+  }
+  & span {
+    font-size: get-d(20px);
+    font-family: $f-poppins;
+    opacity: 0.75;
+  }
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}

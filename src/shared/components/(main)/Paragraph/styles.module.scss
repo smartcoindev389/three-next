@@ -1,0 +1,20 @@
+.paragraph {
+  font-weight: 300;
+  font-size: get-d(16px);
+  line-height: 180%;
+  @include respond(lg) {
+    font-size: get-lg(16px);
+  }
+  @include respond(md) {
+    font-size: 16px;
+  }
+  &.big {
+    font-size: get-d(20px);
+    @include respond(lg) {
+      font-size: get-lg(20px);
+    }
+    @include respond(md) {
+      font-size: 20px;
+    }
+  }
+}

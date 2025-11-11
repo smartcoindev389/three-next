@@ -1,0 +1,404 @@
+.projects {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  left: 0;
+  text-align: center;
+  font-family: $f-poppins;
+  pointer-events: none;
+
+  & > * {
+    pointer-events: all;
+  }
+  & h1 {
+    color: #f0f0f0;
+    font-size: get-d(283px);
+    font-weight: 800;
+    line-height: 140%;
+    position: absolute;
+    top: 50vh;
+    transform: translateY(-50%);
+    opacity: 0;
+    animation: fade-in 1.7s ease-in forwards;
+    transition:
+      font-size 0.3s ease-in,
+      top 0.3s ease-in;
+    &.animated {
+      font-size: get-d(96px);
+      top: get-d(179px);
+    }
+    @include respond(lg) {
+      font-size: get-lg(120px);
+      &.animated {
+        font-size: get-lg(96px);
+        top: get-lg(179px);
+      }
+    }
+    @include respond(md) {
+      font-size: 96px;
+      top: 179px;
+      &.animated {
+        font-size: 48px;
+        top: 100px;
+      }
+    }
+  }
+
+  & .description {
+    position: absolute;
+    font-weight: 400;
+    line-height: 180%;
+    text-transform: lowercase;
+    font-size: get-d(20px);
+    max-width: get-d(660px);
+    top: get-d(300px);
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+    z-index: 33;
+
+    @include respond(lg) {
+      font-size: get-lg(20px);
+      top: get-lg(270px);
+      max-width: get-lg(660px);
+    }
+    @include respond(md) {
+      font-size: 20px;
+      top: 300px;
+      max-width: 660px;
+      width: 90%;
+    }
+
+    &.animated {
+      animation: fade-in 1.7s ease-in 0.3s forwards;
+    }
+
+    & .views {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: get-d(8px);
+      padding: get-d(48px) 0;
+
+      @include respond(lg) {
+        gap: get-lg(8px);
+        padding: get-lg(48px) 0;
+      }
+      @include respond(md) {
+        gap: 8px;
+        padding: 48px 0;
+      }
+
+      & button {
+        font-family: $f-open-sans;
+        font-size: get-d(24px);
+        font-weight: 300;
+        color: $c-primary;
+
+        @include respond(lg) {
+          font-size: get-lg(24px);
+        }
+        @include respond(md) {
+          font-size: 24px;
+        }
+
+        &.active {
+          color: #66d6ff;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  & .gridMode {
+    transition:
+      opacity 0.5s,
+      visibility 0.5s;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+}
+
+.previewImage {
+  position: fixed;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.2s;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.list {
+  position: relative;
+  padding: get-d(550px) get-d(100px) 0;
+  width: 100vw;
+  list-style: none;
+  margin: 0;
+  
+  @include respond(lg) {
+    padding: get-lg(550px) get-lg(32px) 0;
+  }
+  @include respond(md) {
+    padding: 550px 16px 0;
+  }
+  & .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+
+    @include respond(md) {
+      flex-direction: column;
+    }
+
+    & button {
+      color: $c-primary;
+    }
+
+    &.rowCollapsed {
+      text-align: left;
+      align-items: flex-start;
+      flex-direction: column;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s;
+      font-size: get-d(16px);
+      @include respond(lg) {
+        font-size: get-lg(16px);
+      }
+      @include respond(md) {
+        font-size: 12px;
+      }
+      &.open {
+        max-height: 100vh;
+        opacity: 1;
+        padding: get-d(60px) 0;
+        @include respond(lg) {
+          padding: get-lg(60px) 0;
+        }
+        @include respond(md) {
+          padding: 60px 0;
+        }
+      }
+
+      & p {
+        margin: 0;
+        padding: get-d(20px) 0;
+        @include respond(lg) {
+          padding: get-lg(20px) 0;
+        }
+        @include respond(md) {
+          padding: 20px 0;
+        }
+      }
+
+      & img {
+        width: auto;
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    & .col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: get-d(32px);
+      text-align: center;
+      font-family: $f-poppins;
+      font-style: normal;
+      padding: get-d(100px) 0;
+      position: relative;
+      z-index: 1;
+
+      @include respond(lg) {
+        gap: get-lg(32px);
+        padding: get-lg(100px) 0;
+      }
+      @include respond(md) {
+        gap: 32px;
+        padding: 16px 0;
+      }
+
+      &.title {
+        font-size: get-d(48px);
+        font-weight: 700;
+        line-height: 140%;
+        width: 25%;
+        @include respond(lg) {
+          font-size: get-lg(48px);
+        }
+        @include respond(md) {
+          font-size: 48px;
+          width: 100%;
+          align-items: flex-start;
+          position: relative;
+          &::before {
+            content: attr(data-cat);
+            position: absolute;
+            right: 0;
+            font-size: 16px;
+            opacity: 0.5;
+          }
+        }
+      }
+
+      &.category {
+        padding: 0 get-d(189px);
+        font-size: get-d(20px);
+        font-weight: 400;
+        line-height: 180%;
+        text-transform: lowercase;
+        border-color: rgba(255, 255, 255, 0.41);
+        border-style: solid;
+        border-width: 0 1px 0 1px;
+        @include respond(lg) {
+          font-size: get-lg(20px);
+          padding: 0 get-lg(32px);
+        }
+        @include respond(md) {
+          padding: 0 16px;
+          font-size: 20px;
+          display: none;
+        }
+      }
+
+      &.desc {
+        font-size: get-d(16px);
+        font-weight: 400;
+        line-height: 180%;
+        text-transform: lowercase;
+        max-width: get-d(618px);
+        width: 40%;
+        @include respond(lg) {
+          font-size: get-lg(16px);
+          max-width: get-lg(618px);
+          text-align: left;
+        }
+        @include respond(md) {
+          font-size: 16px;
+          width: 100%;
+          max-width: 100%;
+        }
+      }
+
+      &.collapseButton {
+        justify-content: flex-start;
+        user-select: none;
+        @include respond(md) {
+          justify-content: flex-end;
+          align-items: flex-end;
+        }
+      }
+    }
+  }
+}
+
+// no adaptation needed
+
+.projectCard {
+  & img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: get-d(9px);
+    border: get-d(0.5px) solid rgba(151, 227, 255, 0.2);
+    background: #001322;
+    display: block;
+    overflow: hidden;
+
+    @include respond(lg) {
+      border-radius: get-lg(9px);
+      border: get-lg(0.5px) solid rgba(151, 227, 255, 0.2);
+    }
+    @include respond(md) {
+      border-radius: 9px;
+      border: 0.5px solid rgba(151, 227, 255, 0.2);
+    }
+  }
+
+  & .project-info {
+    font-family: $f-poppins;
+    line-height: 140%;
+    padding-top: get-d(16px);
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    grid-gap: get-d(140px);
+    display: grid;
+    grid-template-columns: max-content 1fr;
+
+    @include respond(lg) {
+      grid-gap: get-lg(140px);
+      padding-top: get-lg(16px);
+    }
+    @include respond(md) {
+      grid-gap: 16px;
+      padding-top: 16px;
+    }
+
+    & .title {
+      font-size: max(20px, get-d(20px));
+      font-weight: 700;
+      @include respond(lg) {
+        font-size: max(20px, get-lg(20px));
+      }
+      @include respond(md) {
+        font-size: 20px;
+      }
+    }
+
+    & .description {
+      font-size: get-d(16px);
+      font-weight: 400;
+      @include respond(lg) {
+        font-size: get-lg(16px);
+      }
+      @include respond(md) {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+.visible {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.blur {
+  width: get-d(280px);
+  height: get-d(202px);
+  @include respond(lg) {
+    width: get-lg(280px);
+    height: get-lg(202px);
+  }
+  @include respond(md) {
+    width: 280px;
+    height: 202px;
+  }
+}

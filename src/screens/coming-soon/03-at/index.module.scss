@@ -1,0 +1,123 @@
+.At {
+  padding: get-d(150px) 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: $f-poppins;
+  @include respond(lg) {
+    padding: get-lg(120px) 0;
+  }
+  @include respond(md) {
+    padding: 0 35px 70px 35px;
+  }
+  & svg {
+    position: absolute;
+    top: 50%;
+    width: 150%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+  & h2 {
+    font-weight: 200;
+    font-size: get-d(62px);
+    line-height: 100%;
+    color: #cccccc;
+    @include respond(lg) {
+      font-size: get-lg(62px);
+    }
+    @include respond(md) {
+      font-size: 36px;
+    }
+    & b {
+      font-weight: 800;
+    }
+  }
+  & p {
+    color: #aaaaaa;
+    @include respond(md) {
+      font-size: 16px !important;
+    }
+  }
+  & .line {
+    margin: get-d(54px) 0;
+    background: url("./assets/line.png") center / contain no-repeat;
+    width: get-d(320px);
+    height: get-d(4px);
+    @include respond(lg) {
+      margin: get-lg(54px) 0;
+      width: get-lg(320px);
+      height: get-lg(4px);
+    }
+    @include respond(md) {
+      margin: 30px 0;
+      width: 80%;
+      height: 2px;
+    }
+  }
+  & .span_1 {
+    font-weight: 400;
+    font-size: get-d(16px);
+    line-height: 100%;
+    color: #aaaaaa;
+    @include respond(lg) {
+      font-size: get-lg(16px);
+    }
+    @include respond(md) {
+      font-size: 18px;
+    }
+  }
+  & .span_2 {
+    font-weight: 400;
+    font-size: get-d(40px);
+    line-height: 100%;
+    color: #aaaaaa;
+    margin: get-d(10px) 0;
+    @include respond(lg) {
+      font-size: get-lg(40px);
+      margin: get-lg(10px) 0;
+    }
+    @include respond(md) {
+      font-size: 28px;
+      margin: 10px 0;
+    }
+  }
+  & .span_3 {
+    font-weight: 400;
+    font-size: get-d(16px);
+    line-height: 100%;
+    color: #aaaaaa;
+    @include respond(lg) {
+      font-size: get-lg(16px);
+    }
+    @include respond(md) {
+      font-size: 14px;
+    }
+  }
+  & .link {
+    padding: get-d(10px) get-d(30px);
+    border: 1px solid #3f65fd;
+    border-radius: 100px;
+    font-weight: 400;
+    font-size: get-d(16px);
+    line-height: 120%;
+    color: #aaaaaa;
+    margin: get-d(36px) 0 0 0;
+    @include respond(lg) {
+      padding: get-lg(10px) get-lg(30px);
+      font-size: get-lg(16px);
+      margin: get-lg(36px) 0 0 0;
+    }
+    @include respond(md) {
+      padding: 10px 30px;
+      margin: 40px 0 0 0;
+      font-size: 14px;
+    }
+    & b {
+      font-weight: 600;
+      text-decoration: underline;
+    }
+  }
+}

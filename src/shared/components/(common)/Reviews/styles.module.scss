@@ -1,0 +1,47 @@
+.rating {
+  --size: 3rem;
+
+  svg {
+    width: var(--size);
+    height: var(--size);
+  }
+}
+
+.rating_card {
+  --size: 19px;
+
+  svg {
+    width: var(--size);
+    height: var(--size);
+  }
+}
+
+.review_label {
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.rating_card_image {
+  width: 200px;
+  height: 207px;
+}
+
+.review_card_text {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.review_card_review_title {
+  font-weight: 600;
+}
+
+.review_list_font {
+  font-family: "DIN Condensed", sans-serif !important;
+  font-weight: 700;
+  font-size: 30px;
+  color: #434345;
+}
+
+.review_list_qty_font {
+  color: #434345;
+}

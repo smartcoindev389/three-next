@@ -1,0 +1,57 @@
+.History {
+  color: $c-primary;
+  font-family: $f-poppins;
+  font-size: get-d(16px);
+  font-style: normal;
+  font-weight: 400;
+  text-transform: lowercase;
+  padding-top: get-d(330px);
+  @include respond(lg) {
+    padding-top: get-lg(330px);
+    font-size: get-lg(16px);
+  }
+  @include respond(md) {
+    padding: 330px 16px 16px 16px;
+    font-size: 12px;
+  }
+  & .Item {
+    width: get-d(403px);
+    position: relative;
+    left: var(--left);
+    margin-bottom: var(--margin-bottom);
+    display: flex;
+    flex-direction: column;
+    gap: get-d(8px);
+    &:first-of-type {
+      width: var(--width);
+      @include respond(lg) {
+        width: get-lg(660px);
+      }
+      @include respond(md) {
+        width: 100%;
+      }
+    }
+    & .Title {
+      font-weight: 600;
+      font-size: get-d(40px);
+      @include respond(lg) {
+        font-size: get-lg(40px);
+      }
+      @include respond(md) {
+        font-size: 32px;
+      }
+    }
+    @include respond(lg) {
+      width: get-lg(560px);
+      left: calc(var(--left) * 0.5);
+      margin-bottom: calc(var(--margin-bottom) * 0.75);
+      gap: get-lg(8px);
+    }
+    @include respond(md) {
+      width: 100%;
+      position: static;
+      margin-bottom: 64px;
+      gap: 8px;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+.BorderGradientLight {
+  border-radius: inherit;
+
+  > div {
+    &:nth-child(2) {
+      filter: blur(get-d(6px));
+    }
+  }
+}

@@ -1,0 +1,135 @@
+@use "sass:math";
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.Portfolio {
+  padding: get-d(60px) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: get-d(32px);
+  position: relative;
+  @include respond(lg) {
+    gap: get-lg(32px);
+    padding: get-lg(60px) 0;
+  }
+  @include respond(md) {
+    gap: 32px;
+    padding: 60px 0;
+  }
+}
+
+.before {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  background: url("./assets//grad.webp") center / cover no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translate(0, -50%);
+  z-index: -1;
+  &.beforeHidden {
+    opacity: 0;
+  }
+  &.beforeVisible {
+    opacity: 1;
+  }
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  margin-top: get-d(32px);
+  padding: 0 get-d(100px);
+  @include respond(lg) {
+    margin-top: get-lg(32px);
+    padding: 0 get-lg(80px);
+  }
+  @include respond(md) {
+    grid-template-columns: 100%;
+    margin-top: 32px;
+    padding: 0 16px;
+    grid-gap: get-md(64px);
+  }
+
+  & .item {
+    display: flex;
+    flex-direction: column;
+    &:nth-of-type(3n + 1) {
+      width: get-d(560px);
+      @include respond(lg) {
+        width: get-lg(math.div(560px, 1.7));
+      }
+      @include respond(md) {
+        width: 100%;
+      }
+      & img {
+        width: get-d(560px);
+        height: get-d(640px);
+        @include respond(lg) {
+          width: get-lg(math.div(560px, 1.7));
+          height: get-lg(math.div(640px, 1.7));
+        }
+        @include respond(md) {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+    &:nth-of-type(4n - 1) {
+      justify-content: flex-end;
+    }
+    &:nth-of-type(4n) {
+      justify-self: flex-end;
+    }
+    & img {
+      width: 100%;
+      height: get-d(450px);
+      object-fit: cover;
+      border-radius: get-d(20px);
+      border: get-d(4px) solid #ffffff73;
+      @include respond(lg) {
+        height: get-lg(math.div(450px, 1.7));
+        border-radius: get-lg(math.div(20px, 1.7));
+        border: get-lg(4px) solid #ffffff73;
+      }
+      @include respond(md) {
+        width: 100%;
+        height: auto;
+        border: 4px solid #ffffff73;
+        border-radius: 12px;
+        max-height: 300px;
+      }
+    }
+  }
+}
+
+.name {
+  margin: get-d(42px) 0 get-d(16px) 0;
+  font-weight: 700;
+  font-size: get-d(36px);
+  @include respond(lg) {
+    margin: get-lg(42px) 0 get-lg(16px) 0;
+    font-size: get-lg(36px);
+  }
+  @include respond(md) {
+    margin: get-md(32px) 0 get-md(16px) 0;
+    font-size: 18px;
+  }
+}
+
+.text {
+  font-weight: 500;
+  font-size: get-d(24px);
+  letter-spacing: 0.17em;
+  @include respond(lg) {
+    font-size: get-lg(24px);
+  }
+  @include respond(md) {
+    font-size: 12px;
+  }
+}

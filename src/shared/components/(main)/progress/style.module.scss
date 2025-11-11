@@ -1,0 +1,21 @@
+.progress {
+  position: fixed;
+  z-index: 100;
+  height: get-d(4px);
+  width: 100vw;
+  top: 0;
+  right: 0;
+  left: 0;
+  @include respond(lg) {
+    height: get-lg(4px);
+  }
+  @include respond(md) {
+    height: 4px;
+  }
+}
+
+.bar {
+  width: 0;
+  height: 100%;
+  background: #fff;
+}

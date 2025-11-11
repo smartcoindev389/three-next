@@ -1,0 +1,95 @@
+.How {
+  padding: 0 get-d(100px);
+  font-family: $f-poppins;
+  overflow: visible;
+  @include respond(lg) {
+    padding: 0 get-lg(64px);
+  }
+  @include respond(md) {
+    padding: 0 16px;
+  }
+}
+
+.blur {
+  padding: get-d(60px) get-d(38px) get-d(72px) get-d(38px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: get-d(64px);
+  @include respond(lg) {
+    padding: get-lg(60px) get-lg(32px);
+    gap: get-lg(64px);
+  }
+  @include respond(md) {
+    padding: 32px 16px 16px 16px;
+    gap: 32px;
+  }
+  &::before {
+    width: 60%;
+    right: -10%;
+  }
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  width: 100%;
+  justify-content: space-between;
+  @include respond(lg) {
+    grid-template-columns: repeat(2, calc(50% - get-lg(12px)));
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: get-lg(24px);
+    & .item:last-of-type {
+      grid-column: 1 / -1;
+      width: get-lg(500px);
+      justify-self: center;
+    }
+  }
+  @include respond(md) {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(3, max-content);
+    grid-gap: 32px;
+    & .item:last-of-type {
+      width: 100%;
+    }
+  }
+}
+
+.item {
+  & img {
+    width: get-d(52px);
+    height: get-d(52px);
+    margin: 0 auto;
+    @include respond(lg) {
+      width: get-lg(48px);
+      height: get-lg(48px);
+    }
+    @include respond(md) {
+      width: 48px;
+      height: 48px;
+    }
+  }
+  & h3 {
+    margin: get-d(32px) 0 get-d(16px) 0;
+    font-weight: 500;
+    font-size: get-d(30px);
+    line-height: 140%;
+    @include respond(lg) {
+      margin: get-lg(32px) 0 get-lg(16px) 0;
+      font-size: get-lg(24px);
+    }
+    @include respond(md) {
+      margin: 32px 0 16px 0;
+      font-size: 24px;
+    }
+  }
+  & p {
+    width: get-d(430px);
+    @include respond(lg) {
+      width: 100%;
+    }
+    @include respond(md) {
+      font-size: 16px !important;
+    }
+  }
+}

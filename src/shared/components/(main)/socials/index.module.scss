@@ -1,0 +1,46 @@
+.socials {
+  display: flex;
+  flex-direction: column;
+  gap: get-d(24px);
+  position: absolute;
+  left: get-d(100px);
+  bottom: get-d(50px);
+  z-index: 100;
+  pointer-events: all;
+  @include respond(lg) {
+    gap: get-lg(24px);
+    left: get-lg(100px);
+    bottom: get-lg(50px);
+  }
+  @include respond(md) {
+    gap: 10px;
+    left: 20px;
+    bottom: 50%;
+    transform: translateY(50%);
+  }
+  & img {
+    width: get-d(25px);
+    height: get-d(25px);
+    object-fit: cover;
+    @include respond(lg) {
+      width: get-lg(30px);
+      height: get-lg(30px);
+    }
+    @include respond(md) {
+      width: 28px;
+      height: 28px;
+    }
+  }
+  & a {
+    display: inline-block;
+    transform: scale(1);
+    transition: transform 0.5s;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.zero {
+  transform: scale(0);
+}

@@ -1,0 +1,40 @@
+.Person {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 55vw;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: get-d(62px);
+  .person-photo {
+    background: linear-gradient(
+      135deg,
+      rgba(102, 214, 255, 0.25) 0%,
+      rgba(1, 41, 82, 0.85) 100%
+    );
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    width: get-d(600px);
+    height: get-d(400px);
+  }
+  .person-info {
+    font-family: $f-poppins;
+    color: #fff;
+    line-height: 2;
+    h3 {
+      font-size: get-d(40px);
+      font-weight: 800;
+    }
+    small {
+      color: rgba(102, 214, 255, 0.54);
+      font-size: get-d(16px);
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.48);
+      font-size: get-d(16px);
+    }
+  }
+}

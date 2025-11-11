@@ -1,0 +1,42 @@
+.Text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: get-d(200px) get-d(100px);
+  @include respond(lg) {
+    padding: get-lg(200px) get-lg(100px);
+  }
+  @include respond(md) {
+    padding: 200px 16px;
+  }
+  & h2 {
+    margin-bottom: get-d(20px);
+    @include respond(lg) {
+      margin-bottom: get-lg(20px);
+    }
+    @include respond(md) {
+      margin-bottom: 20px;
+    }
+    & span {
+      text-align: right;
+      display: block;
+    }
+  }
+  & h2,
+  .content {
+    width: get-d(1200px);
+    @include respond(lg) {
+      width: 100%;
+    }
+  }
+  & p {
+    width: get-d(525px);
+    text-align: left;
+    @include respond(lg) {
+      width: get-lg(525px);
+    }
+    @include respond(md) {
+      width: 100%;
+    }
+  }
+}

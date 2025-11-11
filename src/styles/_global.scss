@@ -1,0 +1,71 @@
+@use "sass:color";
+@use "variables" as *;
+@use "mixins" as *;
+
+html {
+  width: 100vw;
+}
+
+::-webkit-scrollbar {
+  width: get-d(8px);
+  background: color.adjust($c-bg, $lightness: 5%);
+  @include respond(lg) {
+    width: get-lg(8px);
+  }
+  @include respond(md) {
+    width: 8px;
+  }
+}
+::-webkit-scrollbar-thumb {
+  background: rgba($c-primary, 10%);
+}
+
+.line-appearance {
+  position: relative;
+  cursor: pointer;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    border-radius: 100px;
+    top: 100%;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s;
+  }
+  &:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  &.active::before {
+    transform: scaleX(1);
+  }
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  color: $c-bg;
+  font-family: $f-open-sans;
+  font-weight: 400;
+  background-color: $c-bg;
+  color: $c-primary;
+  overflow-x: hidden !important;
+  &.overflow {
+    height: 100vh;
+    overflow: hidden !important;
+  }
+}
+
+section {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  overflow: hidden;
+}
+
+.visible {
+  opacity: 1 !important;
+}

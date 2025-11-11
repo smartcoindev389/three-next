@@ -1,0 +1,186 @@
+.What {
+  padding: get-d(40px) 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  @include respond(lg) {
+    padding: get-lg(40px) 0;
+  }
+  @include respond(md) {
+    padding: 75px 20px;
+  }
+  & h2 {
+    font-family: $f-poppins;
+    font-weight: 800;
+    font-size: get-d(40px);
+    line-height: get-d(154px);
+    text-align: center;
+    position: relative;
+    width: get-d(300px);
+    @include respond(lg) {
+      font-size: get-lg(40px);
+      line-height: get-lg(154px);
+      width: get-lg(300px);
+    }
+    @include respond(md) {
+      font-size: 24px;
+      line-height: 100%;
+      width: 50%;
+    }
+    &::before {
+      top: 50%;
+      transform: translateY(-50%);
+      right: 100%;
+      content: "";
+      position: absolute;
+      width: get-d(85px);
+      height: get-d(4px);
+      background: url("./assets/line.png") center / contain no-repeat;
+      @include respond(lg) {
+        width: get-lg(85px);
+        height: get-lg(4px);
+      }
+      @include respond(md) {
+        width: 85px;
+        height: 4px;
+      }
+    }
+    &::after {
+      top: 50%;
+      transform: translateY(-50%) rotateY(180deg);
+      left: 100%;
+      content: "";
+      position: absolute;
+      width: get-d(85px);
+      height: get-d(4px);
+      background: url("./assets/line.png") center / contain no-repeat;
+      @include respond(lg) {
+        width: get-lg(85px);
+        height: get-lg(4px);
+      }
+      @include respond(md) {
+        width: 85px;
+        height: 4px;
+      }
+    }
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: get-d(490px) max-content get-d(490px);
+  grid-gap: get-d(80px);
+  position: relative;
+  margin-top: get-d(30px);
+  @include respond(lg) {
+    grid-template-columns: get-lg(320px) max-content get-lg(320px);
+    grid-gap: get-lg(50px);
+    margin-top: get-lg(10px);
+  }
+  @include respond(md) {
+    grid-template-columns: 1fr;
+    grid-gap: 35px;
+    margin-top: 45px;
+  }
+  & .line {
+    height: get-d(315px);
+    width: get-d(2px);
+    background: url("./assets/big-line.png") center / contain no-repeat;
+    align-self: center;
+    @include respond(lg) {
+      height: get-lg(315px);
+      width: get-lg(2px);
+    }
+    @include respond(md) {
+      display: none;
+    }
+  }
+  & .items {
+    display: flex;
+    flex-direction: column;
+    gap: get-d(45px);
+    @include respond(lg) {
+      gap: get-lg(45px);
+    }
+    @include respond(md) {
+      display: contents;
+    }
+    &-0 {
+      & .item {
+        text-align: right;
+        @include respond(md) {
+          text-align: center;
+        }
+        & .top {
+          flex-direction: row-reverse;
+          @include respond(md) {
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: get-d(15px);
+  @include respond(lg) {
+    gap: get-lg(15px);
+  }
+  @include respond(md) {
+    gap: 5px;
+    text-align: center;
+  }
+  & .top {
+    display: flex;
+    align-items: center;
+    gap: get-d(16px);
+    @include respond(lg) {
+      gap: get-lg(16px);
+    }
+    @include respond(md) {
+      gap: 5px;
+      flex-direction: column;
+    }
+    & img {
+      width: get-d(70px);
+      height: get-d(70px);
+      object-fit: contain;
+      object-position: center;
+      @include respond(lg) {
+        width: get-lg(48px);
+        height: get-lg(48px);
+      }
+      @include respond(md) {
+        width: 48px;
+        height: 48px;
+      }
+    }
+    & .title {
+      font-family: $f-poppins;
+      font-weight: 700;
+      font-size: get-d(20px);
+      line-height: 100%;
+      color: #cccccc;
+      @include respond(lg) {
+        font-size: get-lg(20px);
+      }
+      @include respond(md) {
+        font-size: 16px;
+      }
+    }
+  }
+  & p {
+    color: #aaaaaa;
+    font-size: get-d(18px);
+    line-height: 150%;
+    @include respond(lg) {
+      font-size: get-lg(18px);
+    }
+    @include respond(md) {
+      font-size: 14px;
+    }
+  }
+}

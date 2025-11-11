@@ -1,0 +1,39 @@
+.Faq {
+  padding: 0 get-d(245px) get-d(80px) get-d(245px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include respond(lg) {
+    padding: 0 get-lg(125px) get-lg(80px) get-lg(125px);
+  }
+  @include respond(md) {
+    padding: 100px 20px 40px 20px;
+  }
+}
+
+.items {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: get-d(60px);
+  @include respond(lg) {
+    gap: get-lg(60px);
+  }
+  @include respond(md) {
+    gap: 30px;
+  }
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 1fr 50%;
+  margin-bottom: get-d(80px);
+  @include respond(lg) {
+    margin-bottom: get-lg(80px);
+  }
+  @include respond(md) {
+    margin-bottom: 60px;
+    grid-template-columns: 100%;
+    grid-gap: 20px;
+  }
+}

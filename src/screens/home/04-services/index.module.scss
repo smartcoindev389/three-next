@@ -1,0 +1,149 @@
+.Services {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: get-d(90px) 0;
+  @include respond(lg) {
+    padding: get-lg(90px) 0;
+  }
+  @include respond(md) {
+    padding: 90px 16px;
+    flex-direction: column;
+  }
+}
+
+.content {
+  width: 75%;
+  padding: get-d(50px) get-d(80px);
+  border: 2px solid #97e3ff33;
+  border-right: none;
+  border-radius: get-d(40px) 0 0 get-d(40px);
+  position: relative;
+  @include respond(lg) {
+    width: 75%;
+    padding: get-lg(50px) get-lg(60px);
+    border-radius: get-lg(40px) 0 0 get-lg(40px);
+  }
+  @include respond(md) {
+    width: 100%;
+    padding: 32px 16px;
+    border-right: 2px solid #97e3ff33;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  & .before {
+    width: 100%;
+    height: get-d(1200px);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background: url("./assets/grad.webp") right bottom / contain no-repeat;
+    @include respond(lg) {
+      height: get-lg(1000px);
+    }
+    @include respond(md) {
+      height: 65dvh;
+    }
+  }
+}
+
+.title {
+  font-weight: 700;
+  font-size: get-d(24px);
+  margin-bottom: get-d(90px);
+  letter-spacing: 0.17em;
+  @include respond(lg) {
+    font-size: get-lg(24px);
+    margin-bottom: get-lg(60px);
+  }
+  @include respond(md) {
+    font-size: 18px;
+    margin-bottom: 32px;
+  }
+}
+
+.socials {
+  position: static;
+  transform: none;
+  @include respond(md) {
+    flex-direction: row;
+  }
+}
+
+.aside {
+  position: absolute;
+  top: 50%;
+  left: get-d(100px);
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: get-d(32px);
+  @include respond(lg) {
+    left: get-lg(100px);
+    gap: get-lg(32px);
+  }
+  @include respond(md) {
+    left: auto;
+    gap: 0px;
+    position: static;
+    transform: none;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 24px;
+    justify-content: space-between;
+  }
+  & .text {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    transform: rotate(-90deg);
+    @include respond(md) {
+      display: contents;
+    }
+  }
+  & h4 {
+    font-weight: 400;
+    font-size: get-d(32px);
+    height: 100%;
+    position: absolute;
+    width: max-content;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    @include respond(lg) {
+      font-size: get-lg(32px);
+    }
+    @include respond(md) {
+      font-size: 24px;
+      position: static;
+      transform: none;
+    }
+  }
+}
+
+.dot {
+  width: get-d(8px);
+  height: get-d(8px);
+  min-width: get-d(8px);
+  min-height: get-d(8px);
+  border-radius: 50%;
+  background: $c-primary;
+  @include respond(lg) {
+    width: get-lg(8px);
+    height: get-lg(8px);
+    min-width: get-lg(8px);
+    min-height: get-lg(8px);
+  }
+  @include respond(md) {
+    width: 8px;
+    height: 8px;
+    min-width: 8px;
+    min-height: 8px;
+  }
+}

@@ -1,0 +1,127 @@
+.Footer {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.7s;
+  &.visible {
+    opacity: 1;
+  }
+}
+
+.title {
+  font-weight: 800;
+  font-size: get-d(380px);
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  color: $c-primary;
+  @include respond(lg) {
+    font-size: get-lg(200px);
+  }
+  @include respond(md) {
+    font-size: get-md(140px);
+    margin-bottom: 20px;
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr max-content max-content;
+  padding: 0 get-d(130px) get-d(50px) get-d(130px);
+  text-align: left;
+  grid-gap: get-d(200px);
+  & p {
+    width: get-d(425px);
+  }
+  @include respond(lg) {
+    padding: 0 get-lg(64px) get-lg(50px) get-lg(64px);
+    grid-gap: get-lg(48px);
+    & p {
+      width: get-lg(250px);
+    }
+  }
+  @include respond(md) {
+    padding: 0 16px 50px 16px;
+    grid-gap: 32px;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    text-align: center;
+    & p {
+      width: 100%;
+      grid-column: 1 / -1;
+    }
+  }
+  @include respond(sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bottom {
+  box-shadow: 0 0 get-d(60px) get-d(-10px) #2da0ff;
+  padding: get-d(50px) get-d(130px);
+  display: grid;
+  grid-template-columns: 40% 25%;
+  background: $c-bg;
+  justify-content: space-between;
+  @include respond(lg) {
+    padding: get-lg(50px) get-lg(64px);
+    grid-template-columns: 40% 30%;
+  }
+  @include respond(md) {
+    padding: 50px 16px;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include respond(md) {
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+    justify-content: start;
+  }
+}
+
+.link {
+  font-weight: 500;
+  font-size: get-d(18px);
+  @include respond(lg) {
+    font-size: get-lg(16px);
+  }
+  @include respond(md) {
+    font-size: 16px;
+  }
+}
+
+.copyright {
+  padding: get-d(50px) 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $c-bg;
+  @include respond(lg) {
+    padding: get-lg(16px) 0;
+  }
+  @include respond(md) {
+    padding: 16px 0;
+  }
+  & span {
+    font-weight: 400;
+    font-size: get-d(16px);
+    line-height: 140%;
+    text-align: center;
+    text-transform: lowercase;
+    color: #ffffff9e;
+    @include respond(lg) {
+      font-size: get-lg(16px);
+    }
+    @include respond(md) {
+      font-size: 16px;
+    }
+  }
+}

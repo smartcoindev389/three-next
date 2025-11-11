@@ -1,0 +1,55 @@
+.Hero {
+  height: 100vh;
+  padding: 0 get-d(100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  @include respond(lg) {
+    padding: 0 get-lg(100px);
+  }
+  @include respond(md) {
+    padding: 0 16px;
+    text-align: center;
+  }
+}
+
+.button {
+  padding-inline: get-d(134px);
+  @include respond(lg) {
+    padding-inline: get-lg(134px);
+  }
+  @include respond(md) {
+    padding-inline: 80px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: get-d(700px);
+  justify-content: center;
+  align-items: flex-start;
+  gap: get-d(36px);
+  @include respond(lg) {
+    width: get-lg(700px);
+    gap: get-lg(36px);
+  }
+  @include respond(md) {
+    width: 100%;
+    gap: 24px;
+    align-items: center;
+  }
+  & h1 {
+    font-family: $f-poppins;
+    font-weight: 800;
+    font-size: get-d(64px);
+    line-height: 100%;
+    @include respond(lg) {
+      font-size: get-lg(64px);
+    }
+    @include respond(md) {
+      font-size: 42px;
+    }
+  }
+}

@@ -1,0 +1,161 @@
+.Hero {
+  height: 250vh;
+  pointer-events: auto;
+  overflow: visible;
+  position: relative;
+  z-index: 999;
+  &.little {
+    height: 100vh;
+  }
+  &.isCenter {
+    h1 {
+      font-size: get-d(280px);
+      @include respond(lg) {
+        font-size: get-lg(120px);
+      }
+      @include respond(md) {
+        font-size: 64px;
+      }
+    }
+  }
+  &.coming,
+  &.isCenter {
+    & h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
+  }
+  @include respond(md) {
+    padding: 0 16px;
+  }
+  & h1 {
+    font-family: $f-poppins;
+    font-weight: 800;
+    font-size: get-d(165px);
+    line-height: 120%;
+    color: #f0f0f0;
+    opacity: 0;
+    transform: translateX(-100px);
+    text-align: center;
+    @include respond(lg) {
+      font-size: get-lg(100px);
+    }
+    @include respond(md) {
+      font-size: 64px;
+    }
+  }
+  & p {
+    max-width: get-d(700px);
+    margin: 0 0 get-d(90px) 0;
+    opacity: 0;
+    transform: translateY(100px);
+    text-align: center;
+    @include respond(lg) {
+      max-width: get-lg(700px);
+      margin: 0 0 get-lg(90px) 0;
+    }
+    @include respond(md) {
+      margin: 0 0 45px 0;
+      max-width: 100%;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: sticky;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  & .scrollBar {
+    background: #ffffff30;
+    height: get-d(150px);
+    width: get-d(2px);
+    position: absolute;
+    right: get-d(100px);
+    bottom: get-d(70px);
+    @include respond(lg) {
+      height: get-lg(150px);
+      width: get-lg(2px);
+      right: get-lg(64px);
+      bottom: get-lg(64px);
+    }
+    @include respond(md) {
+      height: 150px;
+      width: 2px;
+      right: 32px;
+      bottom: 32px;
+      display: none;
+    }
+    & span {
+      background: $c-primary;
+      width: 200%;
+      height: 25%;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+.scroll {
+  display: flex;
+  align-items: center;
+  gap: get-d(24px);
+  margin-bottom: get-d(32px);
+  font-weight: 400;
+  font-size: get-d(20px);
+  @include respond(lg) {
+    margin-bottom: get-lg(32px);
+    gap: get-lg(24px);
+    font-size: get-lg(20px);
+  }
+  @include respond(md) {
+    margin-bottom: 32px;
+    gap: 24px;
+    font-size: 20px;
+  }
+  &::before,
+  &::after {
+    content: "";
+    width: get-d(16px);
+    height: get-d(22px);
+    display: block;
+    background: url("./assets/icon.svg") center / contain no-repeat;
+    animation: scroll 2s ease infinite;
+    @include respond(lg) {
+      width: get-lg(16px);
+      height: get-lg(22px);
+    }
+    @include respond(md) {
+      width: 16px;
+      height: 22px;
+    }
+  }
+}
+
+.socials {
+  @include respond(md) {
+    display: none !important;
+  }
+}

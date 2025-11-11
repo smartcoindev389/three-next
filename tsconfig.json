@@ -1,0 +1,87 @@
+{ 
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    /* Aliases */
+    "paths": {
+      "app/*": [
+        "./src/app/*"
+      ],
+      "api/*": [
+        "./src/api/*"
+      ],
+      "interfaces/*": [
+        "./src/interfaces/*"
+      ],
+      "utils/*": [
+        "./src/utils/*"
+      ],
+      "providers/*": [
+        "./src/providers/*"
+      ],
+      "layouts/*": [
+        "./src/layouts/*"
+      ],
+      "screens": [
+        "./src/screens"
+      ],
+      "widgets/*": [
+        "./src/widgets/*"
+      ],
+      "features/*": [
+        "./src/features/*"
+      ],
+      "entities/*": [
+        "./src/entities/*"
+      ],
+      "shared/*": [
+        "./src/shared/*"
+      ],
+      "public/*": [
+        "./public/*"
+      ],
+      "styles/*": [
+        "/src/styles/*"
+      ],
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    /* Custom */
+    "noUnusedLocals": false,
+    "target": "ES2017"
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/shared/components/(main)/ThreeScene/Robot/index.jsx",
+    "src/shared/components/(main)/ThreeScene/CursorTrail/index.tsx",
+    "src/screens/home/07-game/index.jsx",
+    "src/shared/components/(main)/ThreeScene/Nebula/v2.jsx",
+    "src/screens/contact/index.jsx"
+, "src/shared/components/(main)/ThreeScene/Experience/shaders/fragment.js", "src/shared/components/(main)/ThreeScene/Experience/shaders/vertex.js", "src/screens/referral/index.jsx"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

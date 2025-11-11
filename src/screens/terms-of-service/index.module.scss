@@ -1,0 +1,87 @@
+.Page {
+  position: relative;
+}
+
+.Container {
+  width: calc(100% - 40px);
+  margin: 5rem auto 0 auto;
+
+  @media (min-width: 1024px) {
+    width: calc(100% - 200px);
+  }
+
+  @media (min-width: 1280px) {
+    width: calc(100% - 390px);
+  }
+}
+
+.BlurWrap {
+  max-width: 48rem; /* 768px similar to max-w-3xl */
+  margin: 6rem auto 0 auto; /* mt-20 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: get-d(28px);
+  line-height: 100%;
+  width: get-d(400px);
+  height: get-d(200px);
+  height: auto;
+  @include respond(lg) {
+    font-size: get-lg(28px);
+    width: get-lg(400px);
+    height: get-lg(200px);
+  }
+  @include respond(md) {
+    font-size: 20px;
+    width: 200px;
+    height: 80px;
+  }
+  & svg {
+    height: 100%;
+    width: 100%;
+    border-radius: get-d(16px);
+    overflow: hidden;
+    @include respond(lg) {
+      border-radius: get-lg(16px);
+    }
+    @include respond(md) {
+      border-radius: 16px;
+    }
+  }
+}
+
+
+.Content {
+  max-width: 48rem;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+}
+
+.Content h1,
+.Content h2,
+.Content h3 {
+  color: #ffffff;
+  margin: 1.6rem 0 0.8rem;
+}
+
+.Content h1 { font-size: 2.25rem; }
+.Content h2 { font-size: 1.875rem; }
+.Content h3 { font-size: 1.5rem; }
+
+.Content p { margin: 0.75rem 0; }
+
+.Content a {
+  color: #a7c4ff;
+  text-decoration: underline;
+}
+
+.Content ul { margin: 0.75rem 0 0.75rem 1.25rem; }
+.Content li { margin: 0.25rem 0; }
+
+

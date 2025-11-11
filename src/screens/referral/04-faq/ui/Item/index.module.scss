@@ -1,0 +1,94 @@
+.item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  cursor: pointer;
+}
+
+.content {
+  overflow: hidden;
+  opacity: 0;
+  height: 0;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include respond(md) {
+    gap: 10px;
+  }
+}
+
+.title {
+  font-weight: 700;
+  font-size: get-d(26px);
+  line-height: get-d(38px);
+  max-width: get-d(860px);
+  @include respond(lg) {
+    font-size: get-lg(26px);
+    line-height: get-lg(38px);
+    max-width: get-lg(860px);
+  }
+  @include respond(md) {
+    font-size: 16px;
+    line-height: 180%;
+    max-width: none;
+  }
+}
+
+.icon {
+  height: get-d(6px);
+  background: $c-primary;
+  width: get-d(38px);
+  position: relative;
+  min-width: get-d(38px);
+  @include respond(lg) {
+    height: get-lg(4px);
+    width: get-lg(38px);
+    min-width: get-lg(38px);
+  }
+  @include respond(md) {
+    height: 3px;
+    width: 20px;
+    min-width: 20px;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: get-d(38px);
+    height: get-d(6px);
+    transform: rotate(90deg);
+    background: $c-primary;
+    transition: transform 0.5s;
+    @include respond(lg) {
+      width: get-lg(38px);
+      height: get-lg(4px);
+    }
+    @include respond(md) {
+      width: 20px;
+      height: 3px;
+    }
+  }
+  &.active {
+    &::after {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.text {
+  font-weight: 400;
+  font-size: get-d(20px);
+  line-height: 150%;
+  opacity: 0.8;
+  @include respond(lg) {
+    font-size: get-lg(20px);
+  }
+  @include respond(md) {
+    font-size: 16px;
+  }
+}

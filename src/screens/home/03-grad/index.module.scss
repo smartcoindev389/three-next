@@ -1,0 +1,52 @@
+.Grad {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  gap: get-d(32px);
+  text-align: center;
+  position: relative;
+  overflow: visible;
+  height: get-d(900px);
+  padding: get-d(60px) 0;
+  // z-index: 1;
+  // background: $c-bg;
+  & h2 {
+    text-align: center;
+  }
+  @include respond(lg) {
+    height: get-lg(900px);
+    padding: get-lg(60px) 0;
+    gap: get-lg(32px);
+  }
+  @include respond(md) {
+    height: 100dvh;
+    padding: 60px 16px;
+    gap: 16px;
+  }
+  & p {
+    width: get-d(870px);
+    @include respond(lg) {
+      width: get-lg(870px);
+    }
+    @include respond(md) {
+      width: 100%;
+    }
+  }
+}
+
+.image {
+  width: 100vw;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  z-index: -1;
+}

@@ -1,0 +1,148 @@
+.Single {
+  font-family: $f-poppins;
+  & h2 {
+    font-weight: 800;
+    font-size: get-d(32px);
+    line-height: 180%;
+    @include respond(lg) {
+      font-size: get-lg(32px);
+    }
+    @include respond(md) {
+      font-size: 32px;
+    }
+  }
+}
+
+.Section {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: get-d(100px);
+  @include respond(lg) {
+    gap: get-lg(64px);
+  }
+  @include respond(md) {
+    gap: 32px;
+  }
+}
+
+.Content {
+  padding: get-d(195px) get-d(100px) 0 get-d(100px);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  position: relative;
+  z-index: 1;
+  grid-gap: get-d(70px) get-d(100px);
+  grid-auto-rows: max-content;
+  @include respond(lg) {
+    padding: get-lg(195px) get-lg(64px) 0 get-lg(64px);
+    grid-gap: get-lg(64px);
+  }
+  @include respond(md) {
+    padding: 100px 16px 0 16px;
+    grid-gap: 64px;
+    grid-template-columns: 100%;
+  }
+}
+
+.Wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-gap: get-d(160px);
+  align-items: center;
+  @include respond(lg) {
+    grid-gap: get-lg(64px);
+  }
+  @include respond(md) {
+    grid-template-columns: 100%;
+    grid-gap: 32px;
+    grid-template-rows: repeat(2, max-content);
+  }
+  & .blur {
+    min-height: get-d(375px);
+    height: 100%;
+    @include respond(lg) {
+      min-height: get-lg(375px);
+    }
+    @include respond(md) {
+      min-height: 100px;
+    }
+  }
+  & .Text {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    @include respond(md) {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+  }
+  & .blur {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    @include respond(md) {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+    }
+  }
+  &.isEven {
+    & .Text {
+      grid-column: 2 / 3;
+      @include respond(md) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+    }
+    & .blur {
+      grid-column: 1 / 2;
+      @include respond(md) {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+    }
+    & .blur {
+      min-height: get-d(485px);
+      @include respond(lg) {
+        min-height: get-lg(485px);
+      }
+      @include respond(md) {
+        min-height: 200px;
+      }
+    }
+  }
+}
+
+.Text {
+  display: flex;
+  flex-direction: column;
+  gap: get-d(10px);
+  @include respond(lg) {
+    gap: get-lg(10px);
+  }
+  @include respond(md) {
+    gap: 10px;
+  }
+}
+
+.Grid {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: get-d(24px);
+  @include respond(lg) {
+    grid-gap: get-lg(24px);
+  }
+  @include respond(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  & .blur {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    @include respond(md) {
+      &:last-of-type {
+        display: none;
+      }
+    }
+  }
+}

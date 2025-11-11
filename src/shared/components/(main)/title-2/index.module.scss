@@ -1,0 +1,12 @@
+.title {
+  font-family: $f-poppins;
+  font-weight: 700;
+  font-size: get-d(80px);
+  line-height: 100%;
+  @include respond(lg) {
+    font-size: get-lg(80px);
+  }
+  @include respond(md) {
+    font-size: 32px;
+  }
+}

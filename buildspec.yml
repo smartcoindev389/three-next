@@ -1,0 +1,21 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - docker login -u $dockerhub_username -p $dockerhub_password
+      - aws ecr get-login-password --region us-west-1 | docker login --username AWS --password-stdin 764595992126.dkr.ecr.us-west-1.amazonaws.com
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - docker build --build-arg AWS_ACCESS_KEY_ID=$aws_access_key --build-arg AWS_SECRET_ACCESS_KEY=$aws_secret_access_key --build-arg AWS_DEFAULT_REGION=us-west-1 -t platformz-prod-frontend .
+      - docker tag platformz-prod-frontend:latest 764595992126.dkr.ecr.us-west-1.amazonaws.com/platformz-prod-frontend:latest
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+      - docker push 764595992126.dkr.ecr.us-west-1.amazonaws.com/platformz-prod-frontend:latest
+      - printf '[{"name":"platformz-prod-frontend","imageUri":"%s"}]' 764595992126.dkr.ecr.us-west-1.amazonaws.com/platformz-prod-frontend:latest > imagedefinitions.json
+artifacts:
+    files: imagedefinitions.json

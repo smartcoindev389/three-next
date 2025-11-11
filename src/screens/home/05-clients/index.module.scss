@@ -1,0 +1,46 @@
+.Clients {
+  padding: get-d(100px) 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: get-d(24px);
+  @include respond(lg) {
+    padding: get-lg(100px) 0;
+    gap: get-lg(24px);
+  }
+  @include respond(md) {
+    padding: 100px 16px;
+    gap: 24px;
+  }
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 get-d(128px);
+  margin: get-d(36px) 0 0 0;
+  @include respond(lg) {
+    gap: 0 get-lg(64px);
+    margin: get-lg(36px) 0 0 0;
+  }
+  @include respond(md) {
+    gap: 0 32px;
+    margin: 36px 0 0 0;
+  }
+  & img {
+    width: 100%;
+    height: 100%;
+    max-width: get-d(250px);
+    max-height: get-d(180px);
+    object-fit: contain;
+    @include respond(lg) {
+      max-width: get-lg(220px);
+      max-height: get-lg(160px);
+    }
+    @include respond(md) {
+      max-width: 200px;
+      max-height: 120px;
+    }
+  }
+}
